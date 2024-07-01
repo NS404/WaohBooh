@@ -1,0 +1,375 @@
+[gd_scene load_steps=52 format=3 uid="uid://cynwuo4h3dnw"]
+
+[ext_resource type="PackedScene" uid="uid://bwrtqb7x5yh5m" path="res://Scenes/Game_Canvas.tscn" id="1_ovf1r"]
+[ext_resource type="Material" uid="uid://d3geutbgmc108" path="res://Materials/Ground.tres" id="1_wjqwv"]
+[ext_resource type="Script" path="res://Scripts/CanvasHandler.cs" id="2_y1pxk"]
+[ext_resource type="Script" path="res://Scripts/CameraHandler.cs" id="3_i8d77"]
+[ext_resource type="PackedScene" uid="uid://b4kjlmy5n70ae" path="res://Prefabs/Player.tscn" id="3_u46du"]
+[ext_resource type="PackedScene" uid="uid://ct4nyirwiaco2" path="res://Prefabs/Couch.tscn" id="5_5e17p"]
+[ext_resource type="Material" uid="uid://bh8wkk2dem08d" path="res://Materials/Wall.tres" id="5_xriay"]
+[ext_resource type="PackedScene" uid="uid://c3hxdxq6gj5f8" path="res://Prefabs/Coffe_Table.tscn" id="6_57frw"]
+[ext_resource type="Script" path="res://Scripts/CameraRaycastHandler.cs" id="6_m68uf"]
+[ext_resource type="Material" uid="uid://dfjyswm623avy" path="res://Materials/Wall_2.tres" id="6_p530j"]
+[ext_resource type="PackedScene" uid="uid://drkechainydyd" path="res://Prefabs/Entertainment_System.tscn" id="7_q61gt"]
+[ext_resource type="PackedScene" uid="uid://d3jfgf1x100bm" path="res://Prefabs/TV.tscn" id="8_y5evs"]
+[ext_resource type="PackedScene" uid="uid://bpcky7nwsr14h" path="res://Prefabs/Small_Table.tscn" id="9_ew2fn"]
+[ext_resource type="Script" path="res://Scripts/ObjectiveHandler.cs" id="13_hlp72"]
+[ext_resource type="PackedScene" uid="uid://bo6h5w131x30s" path="res://Prefabs/Dinner_Table.tscn" id="13_inohb"]
+[ext_resource type="PackedScene" uid="uid://hh1ibeeg7nbn" path="res://Prefabs/Chair.tscn" id="13_jh5vo"]
+[ext_resource type="Script" path="res://Scripts/ObjectiveMarkerHandler.cs" id="13_veq50"]
+[ext_resource type="PackedScene" uid="uid://bxa2e71ypky4l" path="res://Prefabs/Fridge.tscn" id="14_2ryq4"]
+[ext_resource type="Script" path="res://Scripts/Objective.cs" id="14_w6y6w"]
+[ext_resource type="PackedScene" uid="uid://cipv02d566exx" path="res://Prefabs/Kitchen.tscn" id="15_2o7y1"]
+[ext_resource type="PackedScene" uid="uid://bx12p528hp54b" path="res://Prefabs/Cupboard.tscn" id="16_0j4q7"]
+[ext_resource type="Material" uid="uid://dfo6cl0qom6sa" path="res://Materials/Cel.tres" id="17_d0ler"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_n1fw3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rkdhx"]
+size = Vector2(50, 50)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h1007"]
+
+[sub_resource type="Sky" id="Sky_4x0ca"]
+sky_material = SubResource("ProceduralSkyMaterial_h1007")
+
+[sub_resource type="Environment" id="Environment_yr45d"]
+background_mode = 2
+sky = SubResource("Sky_4x0ca")
+ambient_light_source = 3
+reflected_light_source = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b07pi"]
+size = Vector3(0.5, 2.5, 5.75)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0limm"]
+size = Vector3(0.5, 2.5, 6.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p06xc"]
+size = Vector3(12.5, 2.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yj2ya"]
+size = Vector3(12.5, 2.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q61p5"]
+size = Vector3(12.5, 0.5, 6.75)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v7kbg"]
+size = Vector3(12.5, 0.5, 6.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vorin"]
+size = Vector3(1, 2, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ntru"]
+next_pass = ExtResource("17_d0ler")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.353322, 0.204872, 0.126706, 1)
+roughness = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ami2v"]
+material = SubResource("StandardMaterial3D_0ntru")
+size = Vector3(1, 2, 0.05)
+
+[sub_resource type="SphereMesh" id="SphereMesh_mkp0y"]
+radius = 0.05
+height = 0.1
+radial_segments = 8
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_he3jp"]
+height = 0.5
+radius = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0baqr"]
+transparency = 1
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(1, 1, 0.384314, 0.25098)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3tuhy"]
+material = SubResource("StandardMaterial3D_0baqr")
+top_radius = 0.25
+bottom_radius = 0.25
+height = 0.05
+radial_segments = 16
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qs374"]
+material = SubResource("StandardMaterial3D_0baqr")
+top_radius = 0.1
+bottom_radius = 0.0
+height = 0.15
+radial_segments = 12
+
+[sub_resource type="Animation" id="Animation_51vbx"]
+resource_name = "Objective_Pulse"
+loop_mode = 2
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 1, 1, 1.25, 1, 1.25)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MeshInstance3D2")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, -0.025, 0, 1, 1, 0, 0.025, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j8ojn"]
+_data = {
+"Objective_Pulse": SubResource("Animation_51vbx")
+}
+
+[sub_resource type="Resource" id="Resource_4tnyw"]
+script = ExtResource("14_w6y6w")
+marker = NodePath("Node3D")
+description = "Land on the floor"
+
+[sub_resource type="Resource" id="Resource_eotko"]
+script = ExtResource("14_w6y6w")
+marker = NodePath("Node3D2")
+description = "Land on the table"
+
+[sub_resource type="Resource" id="Resource_k3hhh"]
+script = ExtResource("14_w6y6w")
+marker = NodePath("Node3D3")
+description = "Land on the couch"
+
+[sub_resource type="Resource" id="Resource_y3knt"]
+script = ExtResource("14_w6y6w")
+marker = NodePath("Node3D5")
+description = "Land on the dinner table"
+
+[sub_resource type="Resource" id="Resource_qn5ql"]
+script = ExtResource("14_w6y6w")
+marker = NodePath("Node3D4")
+description = "Land on the small table near the couch"
+
+[sub_resource type="Resource" id="Resource_m0647"]
+script = ExtResource("14_w6y6w")
+marker = NodePath("Node3D6")
+description = "Land on the kitchen countertop"
+
+[sub_resource type="Resource" id="Resource_eygfl"]
+script = ExtResource("14_w6y6w")
+marker = NodePath("Node3D7")
+description = "Land on the stove"
+
+[sub_resource type="Resource" id="Resource_vb0ya"]
+script = ExtResource("14_w6y6w")
+marker = NodePath("Node3D8")
+description = "Land on the TV ¯\\_(ツ)_/¯"
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Canvas" parent="." instance=ExtResource("1_ovf1r")]
+script = ExtResource("2_y1pxk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_n1fw3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+material_override = ExtResource("1_wjqwv")
+mesh = SubResource("PlaneMesh_rkdhx")
+skeleton = NodePath("../..")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yr45d")
+
+[node name="RigidBody3D" parent="." instance=ExtResource("3_u46du")]
+
+[node name="CameraHolder" type="Node3D" parent="."]
+script = ExtResource("3_i8d77")
+playerOffset = Vector3(0, 0.25, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="CameraHolder"]
+target_position = Vector3(0, 0, 0)
+script = ExtResource("6_m68uf")
+
+[node name="Camera3D" type="Camera3D" parent="CameraHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+shadow_enabled = true
+
+[node name="House" type="Node3D" parent="."]
+
+[node name="Walls" type="StaticBody3D" parent="House"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.25, 0.625)
+shape = SubResource("BoxShape3D_b07pi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="House/Walls/CollisionShape3D"]
+mesh = SubResource("BoxMesh_0limm")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="House/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.25, 0.625)
+shape = SubResource("BoxShape3D_b07pi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="House/Walls/CollisionShape3D5"]
+mesh = SubResource("BoxMesh_0limm")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="House/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.25, 3.75)
+shape = SubResource("BoxShape3D_p06xc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="House/Walls/CollisionShape3D3"]
+mesh = SubResource("BoxMesh_yj2ya")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="House/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.25, -2.51865)
+shape = SubResource("BoxShape3D_p06xc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="House/Walls/CollisionShape3D6"]
+mesh = SubResource("BoxMesh_yj2ya")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="House/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.75, 0.625)
+shape = SubResource("BoxShape3D_q61p5")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="House/Walls/CollisionShape3D4"]
+material_override = ExtResource("6_p530j")
+mesh = SubResource("BoxMesh_v7kbg")
+skeleton = NodePath("../..")
+
+[node name="Couch" parent="House" instance=ExtResource("5_5e17p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178555, -0.0166839, -1.48887)
+
+[node name="Coffe_Table" parent="House" instance=ExtResource("6_57frw")]
+
+[node name="Entertainment_System" parent="House" instance=ExtResource("7_q61gt")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 3)
+
+[node name="TV" parent="House/Entertainment_System" instance=ExtResource("8_y5evs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.362863, 0)
+
+[node name="Couch2" parent="House" instance=ExtResource("5_5e17p")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 1)
+
+[node name="Small_Table" parent="House" instance=ExtResource("9_ew2fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93378, 0, -1.3695)
+
+[node name="Dinner_Table" parent="House" instance=ExtResource("13_inohb")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1, 0, -1.5, 0, -6.55671e-08, 3, 0, 2)
+
+[node name="Chair" parent="House" instance=ExtResource("13_jh5vo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.30814, 0, 0.473412)
+
+[node name="Chair2" parent="House" instance=ExtResource("13_jh5vo")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.02456, 0, 1.47341)
+
+[node name="Chair3" parent="House" instance=ExtResource("13_jh5vo")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.02456, 0, 2.47341)
+
+[node name="Chair4" parent="House" instance=ExtResource("13_jh5vo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.28658, 0, 1.6583)
+
+[node name="Chair5" parent="House" instance=ExtResource("13_jh5vo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.28658, 0, 2.6583)
+
+[node name="Fridge" parent="House" instance=ExtResource("14_2ryq4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.27365, 0, 2.62984)
+
+[node name="Kitchen" parent="House" instance=ExtResource("15_2o7y1")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.17213, -0.0458885, -0.395663)
+
+[node name="Cupboard" parent="House" instance=ExtResource("16_0j4q7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, 7.88332, 1.83637, 1.25517)
+
+[node name="Door" type="StaticBody3D" parent="House"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -2.24057)
+shape = SubResource("BoxShape3D_vorin")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="House/Door/CollisionShape3D"]
+mesh = SubResource("BoxMesh_ami2v")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="House/Door/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349693, 0, 0.0217988)
+mesh = SubResource("SphereMesh_mkp0y")
+surface_material_override/0 = ExtResource("5_xriay")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3336, 0)
+light_color = Color(1, 0.882353, 0.882353, 1)
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.3336, 0)
+light_color = Color(1, 0.882353, 0.882353, 1)
+shadow_enabled = true
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.3336, 0)
+light_color = Color(1, 0.882353, 0.882353, 1)
+shadow_enabled = true
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+script = ExtResource("13_veq50")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.238175, 0)
+shape = SubResource("CylinderShape3D_he3jp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D/CollisionShape3D"]
+transform = Transform3D(1.22152, 0, 0, 0, 1, 0, 0, 0, 1.22152, 0, -0.226698, -0.00260997)
+mesh = SubResource("CylinderMesh_3tuhy")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Area3D/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0193049, 0)
+mesh = SubResource("CylinderMesh_qs374")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D/CollisionShape3D"]
+root_node = NodePath("../MeshInstance3D")
+libraries = {
+"": SubResource("AnimationLibrary_j8ojn")
+}
+autoplay = "Objective_Pulse"
+
+[node name="Objectives" type="Node3D" parent="." node_paths=PackedStringArray("objectiveMarker")]
+script = ExtResource("13_hlp72")
+objectives = [SubResource("Resource_4tnyw"), SubResource("Resource_eotko"), SubResource("Resource_k3hhh"), SubResource("Resource_y3knt"), SubResource("Resource_qn5ql"), SubResource("Resource_m0647"), SubResource("Resource_eygfl"), SubResource("Resource_vb0ya")]
+objectiveMarker = NodePath("../Area3D")
+
+[node name="Node3D" type="Node3D" parent="Objectives"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.71804)
+
+[node name="Node3D2" type="Node3D" parent="Objectives"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.430278, 0.20616)
+
+[node name="Node3D3" type="Node3D" parent="Objectives"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.539, 0.45, -1.381)
+
+[node name="Node3D4" type="Node3D" parent="Objectives"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98197, 0.704496, -1.08576)
+
+[node name="Node3D5" type="Node3D" parent="Objectives"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.17922, 0.897892, 2.00143)
+
+[node name="Node3D6" type="Node3D" parent="Objectives"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17922, 0.966947, 1.33229)
+
+[node name="Node3D7" type="Node3D" parent="Objectives"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.95688, 0.978373, -0.201052)
+
+[node name="Node3D8" type="Node3D" parent="Objectives"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0395274, 1.60055, 2.99119)

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bx12p528hp54b"]
+
+[ext_resource type="PackedScene" uid="uid://8kj5yugfw6pq" path="res://Models/Cupboard.glb" id="1_uy7ib"]
+[ext_resource type="Material" uid="uid://dfo6cl0qom6sa" path="res://Materials/Cel.tres" id="2_006ra"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfs3x"]
+next_pass = ExtResource("2_006ra")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.494764, 0.584647, 0.599985, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehvb2"]
+next_pass = ExtResource("2_006ra")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w7e4n"]
+size = Vector3(1.99753, 1.35596, 0.955322)
+
+[node name="Cupboard" instance=ExtResource("1_uy7ib")]
+
+[node name="Icosphere" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nfs3x")
+surface_material_override/1 = SubResource("StandardMaterial3D_ehvb2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Icosphere" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Icosphere/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00306702, 0.326904, -0.360718)
+shape = SubResource("BoxShape3D_w7e4n")

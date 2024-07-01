@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxa2e71ypky4l"]
+
+[ext_resource type="PackedScene" uid="uid://ch8j8o5fik7xa" path="res://Models/Fridge.glb" id="1_c6o7u"]
+[ext_resource type="Material" uid="uid://dfo6cl0qom6sa" path="res://Materials/Cel.tres" id="2_2wj5h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i68is"]
+next_pass = ExtResource("2_2wj5h")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.772942, 1, 0.847733, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oetmj"]
+next_pass = ExtResource("2_2wj5h")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.939997, 0.939997, 0.939997, 1)
+roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rjnyw"]
+size = Vector3(1.22614, 2.33008, 1.29517)
+
+[node name="Fridge" instance=ExtResource("1_c6o7u")]
+
+[node name="Cube_009" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_i68is")
+surface_material_override/1 = SubResource("StandardMaterial3D_oetmj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_009" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_009/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0774841, -0.216797, -0.240601)
+shape = SubResource("BoxShape3D_rjnyw")

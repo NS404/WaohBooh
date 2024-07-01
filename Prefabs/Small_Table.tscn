@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpcky7nwsr14h"]
+
+[ext_resource type="PackedScene" uid="uid://cfshf6ip3omuu" path="res://Models/Small_Table.glb" id="1_3cag7"]
+[ext_resource type="Material" uid="uid://dfo6cl0qom6sa" path="res://Materials/Cel.tres" id="2_i6mgw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uyhot"]
+next_pass = ExtResource("2_i6mgw")
+cull_mode = 2
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.686275, 0.686275, 0.686275, 1)
+roughness = 0.0
+
+[node name="Small_Table" instance=ExtResource("1_3cag7")]
+
+[node name="Circle_003" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_uyhot")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://hh1ibeeg7nbn"]
+
+[ext_resource type="PackedScene" uid="uid://dqu86wusfnukf" path="res://Models/Chair.glb" id="1_ak1rx"]
+[ext_resource type="Material" uid="uid://dfo6cl0qom6sa" path="res://Materials/Cel.tres" id="2_8wtq1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1gf2"]
+next_pass = ExtResource("2_8wtq1")
+cull_mode = 2
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.353322, 0.204872, 0.126706, 1)
+roughness = 0.0
+
+[node name="Chair" instance=ExtResource("1_ak1rx")]
+
+[node name="Plane_005" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_e1gf2")
+surface_material_override/1 = SubResource("StandardMaterial3D_e1gf2")

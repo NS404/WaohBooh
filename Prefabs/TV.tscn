@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3jfgf1x100bm"]
+
+[ext_resource type="PackedScene" uid="uid://bbgmj732wr4u3" path="res://Models/TV.glb" id="1_rtgpg"]
+[ext_resource type="Material" uid="uid://dfo6cl0qom6sa" path="res://Materials/Cel.tres" id="2_mgugx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_paw55"]
+next_pass = ExtResource("2_mgugx")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.246649, 0.246649, 0.246649, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ibgta"]
+next_pass = ExtResource("2_mgugx")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3b4o7"]
+size = Vector3(1.95337, 1.02905, 0.0769043)
+
+[node name="TV" instance=ExtResource("1_rtgpg")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_paw55")
+surface_material_override/1 = SubResource("StandardMaterial3D_ibgta")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00256348, 0.532349, -0.00109863)
+shape = SubResource("BoxShape3D_3b4o7")

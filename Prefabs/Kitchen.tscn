@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://cipv02d566exx"]
+
+[ext_resource type="PackedScene" uid="uid://cxxw5omgn6gg5" path="res://Models/Kitchen.glb" id="1_16rwr"]
+[ext_resource type="Material" uid="uid://dfo6cl0qom6sa" path="res://Materials/Cel.tres" id="2_gmprr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qmyxo"]
+next_pass = ExtResource("2_gmprr")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.266637, 0.156285, 0.0386073, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_640gf"]
+next_pass = ExtResource("2_gmprr")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fjyv"]
+next_pass = ExtResource("2_gmprr")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.546663, 0.414197, 0.275404, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6s75"]
+next_pass = ExtResource("2_gmprr")
+cull_mode = 2
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.246649, 0.246649, 0.246649, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_covj0"]
+next_pass = ExtResource("2_gmprr")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.494764, 0.584647, 0.599985, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_capo5"]
+next_pass = ExtResource("2_gmprr")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0c1aq"]
+size = Vector3(4.47556, 1.10718, 1.24109)
+
+[node name="Kitchen" instance=ExtResource("1_16rwr")]
+
+[node name="Icosphere_001" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qmyxo")
+surface_material_override/1 = SubResource("StandardMaterial3D_640gf")
+surface_material_override/2 = SubResource("StandardMaterial3D_7fjyv")
+surface_material_override/3 = SubResource("StandardMaterial3D_t6s75")
+surface_material_override/4 = SubResource("StandardMaterial3D_covj0")
+surface_material_override/5 = SubResource("StandardMaterial3D_capo5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Icosphere_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Icosphere_001/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329483, -0.379517, -0.181702)
+shape = SubResource("BoxShape3D_0c1aq")

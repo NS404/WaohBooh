@@ -1,0 +1,5 @@
+[gd_resource type="CylinderShape3D" format=3 uid="uid://ccjrtg87w0gaj"]
+
+[resource]
+height = 0.215
+radius = 0.07

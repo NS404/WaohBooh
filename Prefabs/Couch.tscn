@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct4nyirwiaco2"]
+
+[ext_resource type="PackedScene" uid="uid://cc07jwfdvfn04" path="res://Models/Couch.glb" id="1_hjoff"]
+[ext_resource type="Material" uid="uid://dfo6cl0qom6sa" path="res://Materials/Cel.tres" id="2_4q8vx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wy0r"]
+next_pass = ExtResource("2_4q8vx")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.313726, 0.0980392, 0.0980392, 1)
+roughness = 0.0
+grow = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jgw6o"]
+size = Vector3(2.24, 0.425, 1.258)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6rojx"]
+size = Vector3(0.286865, 0.550293, 1.41235)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4hh2r"]
+size = Vector3(2.22955, 1.19434, 0.477661)
+
+[node name="Couch" instance=ExtResource("1_hjoff")]
+
+[node name="Cube_007" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8wy0r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052, 0.25, -0.135)
+shape = SubResource("BoxShape3D_jgw6o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15271, 0.315794, -0.053335)
+shape = SubResource("BoxShape3D_6rojx")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26881, 0.308838, -0.053335)
+shape = SubResource("BoxShape3D_6rojx")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0574626, 0.634277, -0.520437)
+shape = SubResource("BoxShape3D_4hh2r")

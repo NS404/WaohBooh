@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3hxdxq6gj5f8"]
+
+[ext_resource type="PackedScene" uid="uid://v6cb7llmirsj" path="res://Models/Coffe_Table.glb" id="1_glbss"]
+[ext_resource type="Material" uid="uid://dfo6cl0qom6sa" path="res://Materials/Cel.tres" id="2_jmyiw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2t4x1"]
+next_pass = ExtResource("2_jmyiw")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.686275, 0.686275, 0.686275, 1)
+roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xd61j"]
+size = Vector3(2.00302, 4.0918, 1.99231)
+
+[node name="Coffe_Table" instance=ExtResource("1_glbss")]
+
+[node name="Cube_001" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2t4x1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_001/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000472989, -0.647461, -0.0043335)
+shape = SubResource("BoxShape3D_xd61j")

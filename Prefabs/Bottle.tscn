@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxxqb6f4h05ug"]
+
+[ext_resource type="PackedScene" uid="uid://cdk2iq0sc4b0s" path="res://Models/Bottle.glb" id="1_vsr4u"]
+[ext_resource type="Material" uid="uid://dyel5ldv6wn3u" path="res://Materials/Bottle_Water.tres" id="2_jc6gh"]
+[ext_resource type="Material" uid="uid://bx76jkyuvrnu4" path="res://Materials/Bottle_Label.tres" id="3_audr2"]
+
+[node name="Bottle" instance=ExtResource("1_vsr4u")]
+
+[node name="Plane_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_jc6gh")
+surface_material_override/1 = ExtResource("3_audr2")

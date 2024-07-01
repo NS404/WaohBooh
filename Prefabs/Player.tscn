@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4kjlmy5n70ae"]
+
+[ext_resource type="Script" path="res://Scripts/BottleHandler.cs" id="1_8k4kt"]
+[ext_resource type="Shape3D" uid="uid://d1ejq30po862q" path="res://Shapes/PlayerBox.tres" id="2_16wpf"]
+[ext_resource type="PackedScene" uid="uid://bxxqb6f4h05ug" path="res://Prefabs/Bottle.tscn" id="2_qrek4"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.548866, 0)
+mass = 0.15
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.07, 0)
+script = ExtResource("1_8k4kt")
+fillAmount = 0.5
+maxForce = Vector2(1, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = ExtResource("2_16wpf")
+
+[node name="Bottle" parent="CollisionShape3D" instance=ExtResource("2_qrek4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115, -0.00466893)

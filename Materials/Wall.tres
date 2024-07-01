@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bh8wkk2dem08d"]
+
+[ext_resource type="Material" uid="uid://dfo6cl0qom6sa" path="res://Materials/Cel.tres" id="1_t36e4"]
+
+[resource]
+next_pass = ExtResource("1_t36e4")
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.686275, 0.686275, 0.686275, 1)
+roughness = 0.0
